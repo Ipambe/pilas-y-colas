@@ -1,25 +1,25 @@
 class NavegadorWeb {
   private historial: string[] = []
 
-  visit(pagina: string): void {
-    this.historial.push(pagina)
+  visit(pagina: string) {
+    this.historial.unshift(pagina)
     console.log(`Visitaste: ${pagina}`)
   }
 
-  back(): void {
+  back() {
     if (this.historial.length <= 1)
       return console.log('No hay páginas anteriores para volver.')
 
-    const current = this.historial.pop()
-    console.log(`Volviste a "${this.historial.at(-1)}" desde "${current}"`)
+    const current = this.historial.shift()
+    console.log(`Volviste a "${this.historial.at(0)}" desde "${current}"`)
   }
 
-  mostrarHistorial(): void {
+  mostrarHistorial() {
     console.log('Historial de navegación:')
 
     if (this.historial.length === 0) return console.log('(vacío)')
 
-    this.historial.forEach((page, index) => console.log(`- ${page}`))
+    this.historial.forEach((pagina) => console.log(`- ${pagina}`))
   }
 }
 
