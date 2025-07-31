@@ -15,11 +15,10 @@ class NavegadorWeb {
   }
 
   mostrarHistorial() {
+    if (this.historial.length === 0) return console.log('Historial vacío.')
+
     console.log('Historial de navegación:')
-
-    if (this.historial.length === 0) return console.log('(vacío)')
-
-    this.historial.forEach((pagina) => console.log(`- ${pagina}`))
+    for (const pagina of this.historial) console.log(`- ${pagina}`)
   }
 }
 
