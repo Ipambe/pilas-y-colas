@@ -42,6 +42,10 @@ banco.atenderCliente()
 banco.mostrarCola()
 console.log()
 
+banco.encolarCliente('María')
+banco.mostrarCola()
+console.log()
+
 banco.atenderCliente()
 banco.mostrarCola()
 console.log()
